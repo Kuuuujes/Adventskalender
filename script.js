@@ -3,6 +3,14 @@ const dialog = document.querySelector('#surprise');
 const modalMedia = document.querySelector('#modal-media');
 const imageViewer = document.querySelector('#image-viewer');
 const fullscreenImage = document.querySelector('#fullscreen-image');
+const dateLockToggle = document.querySelector('#date-lock-toggle');
+const CALENDAR_YEAR = 2026;
+
+try {
+  dateLockToggle.checked = localStorage.getItem('advent-date-lock') === 'true';
+} catch {
+  dateLockToggle.checked = false;
+}
 
 function getYouTubeId(url) {
   if (!url) return null;
@@ -24,10 +32,27 @@ function renderCalendar(surprises) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'door';
-    button.setAttribute('aria-label', `Türchen ${day} öffnen`);
-    button.innerHTML = `<span class="door-number">${String(day).padStart(2, '0')}</span><span class="door-sparkle" aria-hidden="true">${index % 4 === 0 ? '✦' : '❄'}</span>`;
+    button.dataset.day = day;
+    button.innerHTML = `<span class="door-number">${String(day).padStart(2, '0')}</span><span class="door-sparkle" aria-hidden="true">${index % 4 === 0 ? '✦' : '❄'}</span><span class="door-lock" aria-hidden="true"></span>`;
     button.addEventListener('click', () => openSurprise(day, surprise));
     calendar.append(button);
+  });
+  updateDoorStates();
+}
+
+function updateDoorStates() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  calendar.querySelectorAll('.door').forEach(button => {
+    const day = Number(button.dataset.day);
+    const releaseDate = new Date(CALENDAR_YEAR, 11, day);
+    const locked = dateLockToggle.checked && today < releaseDate;
+    button.disabled = locked;
+    button.classList.toggle('door--locked', locked);
+    button.setAttribute('aria-label', locked
+      ? `Türchen ${day}, öffnet am ${day}. Dezember ${CALENDAR_YEAR}`
+      : `Türchen ${day} öffnen`);
+    button.title = locked ? `Öffnet am ${day}. Dezember ${CALENDAR_YEAR}` : '';
   });
 }
 
@@ -98,6 +123,15 @@ function makeExternalLink(url, label) {
   link.textContent = `${label} ↗`;
   return link;
 }
+
+dateLockToggle.addEventListener('change', () => {
+  try {
+    localStorage.setItem('advent-date-lock', String(dateLockToggle.checked));
+  } catch {
+    // The toggle still works for this page even when storage is unavailable.
+  }
+  updateDoorStates();
+});
 
 document.querySelector('.close').addEventListener('click', () => dialog.close());
 document.querySelector('.image-viewer-close').addEventListener('click', () => imageViewer.close());

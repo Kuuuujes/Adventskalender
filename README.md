@@ -27,6 +27,8 @@ Pro Türchen:
 
 Für ein Bild zuerst die Originaldatei nach `assets/images/` hochladen und den Pfad in `image` eintragen. Pro Türchen `url` **oder** `image` angeben. Das Bild wird nicht serverseitig verändert.
 
+Der Schalter **Freischaltung nach Datum** aktiviert die Türchen-Sperre: Türchen 1 öffnet am 1. Dezember, Türchen 2 am 2. Dezember usw. Ohne aktivierten Schalter bleiben alle Türen zum Testen offen. Die Einstellung wird im Browser gespeichert. Das Jahr steht als `CALENDAR_YEAR` in `script.js` (aktuell 2026); die Sperre ist nur eine Anzeige im Browser, keine Zugriffssicherheit.
+
 ## Lokal testen
 
 Im Projektordner einen statischen Server starten, z. B. `python3 -m http.server 8000`, und `http://localhost:8000` öffnen. `doors.json` muss über den Server geladen werden; ein direktes Öffnen von `index.html` funktioniert wegen der Browser-Sicherheitsregeln für `fetch` nicht.
