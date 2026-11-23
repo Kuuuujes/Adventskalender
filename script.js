@@ -27,8 +27,13 @@ function getYouTubeId(url) {
 
 function renderCalendar(surprises) {
   calendar.replaceChildren();
-  surprises.forEach((surprise, index) => {
-    const day = index + 1;
+  const doors = surprises.map((surprise, index) => ({ surprise, day: index + 1 }));
+  for (let i = doors.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [doors[i], doors[j]] = [doors[j], doors[i]];
+  }
+
+  doors.forEach(({ surprise, day }, index) => {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'door';
