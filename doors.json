@@ -25,10 +25,11 @@
     "author": "Kujes"
   },
   {
-    "title": "Kleine Dinge, große Freude",
-    "description": "Ein paar schöne Fundstücke und Gedanken für einen besonders gemütlichen Tag.",
-    "url": "",
-    "label": "Jetzt entdecken"
+    "title": "Das Mädchen, der Biber und der Mond",
+    "image": "assets/images/maedchen-biber-mond.png",
+    "imageAlt": "Illustration: Ein Mädchen und ein Biber blicken zum Mond zwischen zwei Leuchttürmen.",
+    "description": "optionaler beschreibungstext blabalaba WOW tolll auch. optionaler beschreibungstext blabalaba WOW tolll auch. optionaler beschreibungstext blabalaba WOW tolll auch.",
+    "author": "Kujes"
   },
   {
     "title": "Heute wird gebastelt",
