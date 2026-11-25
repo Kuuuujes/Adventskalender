@@ -1,36 +1,30 @@
 [
   {
-    "title": "Danny im Chaos",
-    "embed": "https://itch.io/embed/5394215?border_width=0&bg_color=222222&fg_color=eeeeee&border_color=363636",
-    "url": "https://mrkujes.itch.io/danny-im-chaos",
-    "label": "Auf itch.io öffnen",
-    "author": "kujes"
-  },
-  {
-    "title": "Rapbattle",
-    "image": "assets/images/rapbattle.png",
-    "imageAlt": "Frau mit rot-weißem Haar, Sonnenbrille und schwarzer Lederjacke bei Nacht",
-    "author": "kujes"
-  },
-  {
-    "title": "Lofi Musik zum chillen und Inferno planen",
-    "url": "https://youtu.be/D3NE7JwFEd8",
-    "label": "Auf YouTube öffnen",
-    "author": "kujes"
-  },
-  {
-    "title": "Gollumdetektiv Rätsel",
-    "url": "https://gollumdetektive2.netlify.app/",
-    "label": "Rätsel öffnen",
-    "description": "Vielleicht viel zu schwer, aber als Detektiv geht's ja auch ums Rausfinden und nicht ums Wissen.",
-    "author": "Kujes"
-  },
-  {
     "title": "Das Mädchen, der Biber und der Mond",
     "image": "assets/images/maedchen-biber-mond.png",
     "imageAlt": "Illustration: Ein Mädchen und ein Biber blicken zum Mond zwischen zwei Leuchttürmen.",
     "description": "optionaler beschreibungstext blabalaba WOW tolll auch. optionaler beschreibungstext blabalaba WOW tolll auch. optionaler beschreibungstext blabalaba WOW tolll auch.",
     "author": "Kujes"
+  },
+  {
+    "title": "Titel",
+    "description": "optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch.",
+    "url": ""
+  },
+  {
+    "title": "Titel",
+    "description": "optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch.",
+    "url": ""
+  },
+  {
+    "title": "Titel",
+    "description": "optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch.",
+    "url": ""
+  },
+  {
+    "title": "Titel",
+    "description": "optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch. optionaler beschreibungstext blabalaba WOW toll auch.",
+    "url": ""
   },
   {
     "title": "Titel",
