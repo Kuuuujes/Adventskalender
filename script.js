@@ -91,6 +91,21 @@ function openSurprise(day, surprise) {
     if (surprise.url) {
       modalMedia.append(makeExternalLink(surprise.url, surprise.label || 'Projekt öffnen'));
     }
+  } else if (surprise.embed) {
+    const embedFrame = document.createElement('div');
+    embedFrame.className = 'itch-embed-wrap';
+    const iframe = document.createElement('iframe');
+    iframe.className = 'itch-embed';
+    iframe.src = surprise.embed;
+    iframe.title = surprise.title || 'itch.io-Spiel';
+    iframe.loading = 'lazy';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    embedFrame.append(iframe);
+    modalMedia.append(embedFrame);
+    if (surprise.url) {
+      modalMedia.append(makeExternalLink(surprise.url, surprise.label || 'Auf itch.io öffnen'));
+    }
   } else if (surprise.url && getYouTubeId(surprise.url)) {
     const videoId = getYouTubeId(surprise.url);
     const videoFrame = document.createElement('div');
@@ -111,7 +126,7 @@ function openSurprise(day, surprise) {
   } else {
     const placeholder = document.createElement('div');
     placeholder.className = 'media-placeholder';
-    placeholder.textContent = 'Inhalt folgt.';
+    placeholder.textContent = 'Bild / Video / Link';
     modalMedia.append(placeholder);
   }
 
