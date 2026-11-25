@@ -126,7 +126,7 @@ function openSurprise(day, surprise) {
   } else {
     const placeholder = document.createElement('div');
     placeholder.className = 'media-placeholder';
-    placeholder.textContent = 'Inhalt folgt.';
+    placeholder.textContent = 'Bild / Video / Link';
     modalMedia.append(placeholder);
   }
 
