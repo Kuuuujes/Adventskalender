@@ -167,7 +167,7 @@ dialog.addEventListener('close', () => {
   if (active && active.classList.contains('door')) active.focus();
 });
 
-fetch('./doors.json')
+fetch(`./doors.json?v=${Date.now()}`, { cache: 'no-store' })
   .then(response => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
